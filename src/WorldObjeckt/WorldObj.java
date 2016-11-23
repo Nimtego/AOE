@@ -43,7 +43,7 @@ abstract public class WorldObj implements Interaction {
 
 	@Override
 	public String toString() {
-		return "Имя: " +name +"\nИнформация: " +information +"\n" +getCoordinate();
+		return "\nИмя: " +name +"\nИнформация: " +information +"\n" +getCoordinate();
 	}
 	
 	

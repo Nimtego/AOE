@@ -1,6 +1,6 @@
 package WorldObjeckt.InanimateObj;
 
-public class Ammunition extends Inanimate {
+abstract public class Ammunition extends Inanimate {
 	public Ammunition() {
 		super("Empty","Empty");
 	}

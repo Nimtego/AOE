@@ -1,4 +1,5 @@
 package WorldObjeckt.InanimateObj;
+import Constant.TypeOfClothing;
 import ParametersAll.*;
 import WorldObjeckt.*;
 import WorldMap.*;
@@ -15,8 +16,8 @@ abstract public class AmmunitionClothing extends Ammunition {
 		parameters = new Parameters(healPoints, pAtack, mAtack, pDef, mDef, block, parry, 
 									critChens, powerOfCrit, speedAtack);
 	}
-	public Parameters getParameters() {
-		return parameters;
-	}
+	public Parameters getParameters() {return parameters;}
+	abstract public TypeOfClothing getTypeOfClothing();
+
 	
 }

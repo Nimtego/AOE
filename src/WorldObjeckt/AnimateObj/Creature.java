@@ -8,7 +8,7 @@ import WorldObjeckt.InanimateObj.AmmunitionObj.Gold;
 
 abstract public class Creature extends WorldObj {
 	private Gold gold;
-	public Parameters parameters;
+	private Parameters parameters;
 	private Inventory inventory;
 	private ClothingInUse clothingInUse;
 
