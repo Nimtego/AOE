@@ -20,27 +20,16 @@ abstract public class WorldObj implements Interaction {
 		setInformation(information);
 		coordinate = new Coordinate(Rand.getRandInt(10), Rand.getRandInt(10), Rand.getRandInt(10), Rand.getRandInt(10));
 	}
-
 	@Override
-	public void interact(Creature somfing){
-		
-	}
-	
+	public void interact(Creature creature){};
 	@Override
 	public void interact(Ammunition things) {
 		System.out.println(things.getName());
 	}
-	
 	@Override
 	public String fullInformation(){
 		return name + " " + information;
 	}
-	
-	@Override
-	public void testInteract() {
-		System.out.println("interact для " +name + " сработал");
-	}
-
 	@Override
 	public String toString() {
 		return "\nИмя: " +name +"\nИнформация: " +information +"\n" +getCoordinate();

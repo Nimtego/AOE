@@ -3,9 +3,7 @@ package Capacity;
 import Constant.TypeOfClothing;
 import Utilits.UserChoice;
 import WorldObjeckt.InanimateObj.AmmunitionClothing;
-
 import java.util.HashMap;
-import java.util.Map;
 
 import static Constant.TypeOfClothing.*;
 
@@ -25,40 +23,27 @@ public class ClothingInUse {
         this.clothing.put(FEET, null);
     }
     public HashMap<TypeOfClothing, AmmunitionClothing> getClothing() {
-        return clothing;
-    }
+        return clothing;}
     public void setClothing(HashMap<TypeOfClothing, AmmunitionClothing> clothing) {
-        this.clothing = clothing;
-    }
+        this.clothing = clothing;}
     public AmmunitionClothing getClothingByKey(final TypeOfClothing typeOfClothing) {
         return clothing.get(typeOfClothing);
     }
     public void setClothingByKey(final TypeOfClothing typeOfClothing, final AmmunitionClothing ammunitionClothing) {
         AmmunitionClothing saveOld = null;
-        for(Map.Entry<TypeOfClothing, AmmunitionClothing> item : clothing.entrySet()){
-            System.out.println("Ключ: "+item.getKey() +" Значение: " +item.getValue());
-        }
         if (clothing.get(typeOfClothing) == null) {
-            System.out.println("\nPUSHING\n");
             clothing.put(typeOfClothing, ammunitionClothing);
         }
         else {
-            System.out.println("\nNot empty type - " + typeOfClothing);
-            System.out.println("\nChange? (y or n)\n");
-            if(UserChoice.yesOrNot()) {
+            if(UserChoice.yesOrNot("Заменить на " +ammunitionClothing.getName() +" ?")) {
                 clothing.put(typeOfClothing, ammunitionClothing);
-                System.out.println("Теперь лезер боты в tmp "  +"\n" +saveOld);
-                System.out.println("\nА в хаш сете - ");
-                for(Map.Entry<TypeOfClothing, AmmunitionClothing> item : clothing.entrySet()){
-                    System.out.println("Ключ: "+item.getKey() +" Значение: " +item.getValue());
-                }
             }
         }
     }
-
-
 }
 /*
+                for(Map.Entry<TypeOfClothing, AmmunitionClothing> item : clothing.entrySet()){
+                    System.out.println("Ключ: "+item.getKey() +" Значение: " +item.getValue());
     Отображения представляют такие наборы, в которых каждый объект представляет пару "ключ-значение". Такие коллекции облегчают поиск элемента, если нам известен ключ - уникальный идентификатор объекта.
         Все классы отображений реализуют обобщенный интерфейс Map<K, V>, который определяет основную функциональность через следующие методы:
         void clear(): очищает коллекцию

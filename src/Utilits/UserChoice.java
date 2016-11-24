@@ -1,5 +1,7 @@
 package Utilits;
 
+import AOEException.NotCorrectEnteringException;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,9 +10,9 @@ import java.io.InputStreamReader;
  * Created by nimtego_loc on 18.11.2016.
  */
 public class UserChoice {
-    public static boolean yesOrNot() {
+    public static boolean yesOrNot(String worlForSout) {
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("(y or n)");
+        System.out.println(worlForSout +"(y or n)");
         String question = null;
         do {
             try {
@@ -20,11 +22,11 @@ public class UserChoice {
             }
             try {
                 if (!(question.equals("y") || question.equals("Y") || question.equals("N") || question.equals("n"))) {
-                    throw new Exception();
+                    throw new NotCorrectEnteringException();
                 }
                 return question.equals("Y") || question.equals("y");
             } catch (Exception e) {
-                System.out.println(e);
+                System.out.println("Введите y или n");
             }
         }
         while (true);

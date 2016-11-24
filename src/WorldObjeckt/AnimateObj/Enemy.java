@@ -9,7 +9,11 @@ public class Enemy extends Creature implements Interaction {
 		super(name, "Enemy", new Parameters(healPoints, pAtack, lvl, healPoints / 2));
 	}
 	@Override
-	public String getName(){return super.getName();}
+	public String getName(){
+		return super.getName();
+	}
 	@Override
-	public void interact(Creature somfing) {Fight.blow(this, somfing);}
+	public void interact(Creature creature) {
+		Fight.blow(this, creature);
+	}
 }

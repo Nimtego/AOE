@@ -1,6 +1,7 @@
 package WorldObjeckt.InanimateObj.AmmunitionObj.AmmunitionCollection.Boots;
 
 import Utilits.Rand;
+import WorldObjeckt.AnimateObj.Creature;
 import WorldObjeckt.InanimateObj.AmmunitionObj.Boots;
 
 /**
