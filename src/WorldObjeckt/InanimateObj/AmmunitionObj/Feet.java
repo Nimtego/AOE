@@ -1,11 +1,10 @@
 package WorldObjeckt.InanimateObj.AmmunitionObj;
 import Constant.TypeOfClothing;
 import WorldObjeckt.InanimateObj.*;
-import static Constant.TypeOfClothing.FEET;
 
-abstract public class Boots extends AmmunitionClothing {
-	private final TypeOfClothing typeOfClothing = FEET;
-	public Boots(String name, String iformation, int healPoints, int pAtack, int mAtack, int pDef, int mDef, int block, int parry,
+abstract public class Feet extends AmmunitionClothing {
+	private final TypeOfClothing typeOfClothing = TypeOfClothing.FEET;
+	public Feet(String name, String iformation, int healPoints, int pAtack, int mAtack, int pDef, int mDef, int block, int parry,
 				 int critChens, int powerOfCrit, int speedAtack) {
 		super(name, iformation + " boots", healPoints, pAtack, mAtack, pDef, mDef, block, parry,
 				critChens, powerOfCrit, speedAtack);

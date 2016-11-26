@@ -4,7 +4,6 @@ import Constant.TypeOfClothing;
 import Utilits.UserChoice;
 import WorldObjeckt.InanimateObj.AmmunitionClothing;
 import java.util.HashMap;
-
 import static Constant.TypeOfClothing.*;
 
 /**
@@ -21,6 +20,10 @@ public class ClothingInUse {
         this.clothing.put(HANDS, null);
         this.clothing.put(LEGS, null);
         this.clothing.put(FEET, null);
+        this.clothing.put(LEFTHAND, null);
+        this.clothing.put(RIGHTHAND, null);
+        this.clothing.put(RING, null);
+        this.clothing.put(NECKLACE, null);
     }
     public HashMap<TypeOfClothing, AmmunitionClothing> getClothing() {
         return clothing;}

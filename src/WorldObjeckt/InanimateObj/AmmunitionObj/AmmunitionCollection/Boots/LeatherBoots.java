@@ -2,7 +2,7 @@ package WorldObjeckt.InanimateObj.AmmunitionObj.AmmunitionCollection.Boots;
 import WorldObjeckt.InanimateObj.AmmunitionObj.*;
 import Utilits.Rand;
 
-public class LeatherBoots extends Boots {
+public class LeatherBoots extends Feet {
 	String name = "Leather Boot";
 	public LeatherBoots() {
 		super("Leather Boots", "Light", Rand.getRandInt(10), 

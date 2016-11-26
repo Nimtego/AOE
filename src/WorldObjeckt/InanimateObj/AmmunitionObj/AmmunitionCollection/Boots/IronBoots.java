@@ -1,13 +1,11 @@
 package WorldObjeckt.InanimateObj.AmmunitionObj.AmmunitionCollection.Boots;
-
 import Utilits.Rand;
-import WorldObjeckt.AnimateObj.Creature;
-import WorldObjeckt.InanimateObj.AmmunitionObj.Boots;
+import WorldObjeckt.InanimateObj.AmmunitionObj.Feet;
 
 /**
  * Created by nimtego_loc on 23.11.2016.
  */
-public class IronBoots extends Boots {
+public class IronBoots extends Feet {
     String name = "Leather Boot";
     public IronBoots() {
         super("Iron Boots", "Heavy", Rand.getRandInt(10),

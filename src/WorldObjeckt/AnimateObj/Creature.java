@@ -19,21 +19,11 @@ abstract public class Creature extends WorldObj {
 		gold = new Gold();
 		setParameters(parameters);
 	}
-	public Gold getGold() {
-		return gold;
-	}
-	public void setGold(Gold gold) {
-		this.gold = gold;
-	}
-	public ClothingInUse getClothingInUse() {
-		return clothingInUse;
-	}
-	public void setClothingInUse(ClothingInUse clothingInUse) {
-		this.clothingInUse = clothingInUse;
-	}
-	public Inventory getInventory() {
-		return inventory;
-	}
+	public Gold getGold() {return gold;}
+	public void setGold(Gold gold) {this.gold = gold;}
+	public ClothingInUse getClothingInUse() {return clothingInUse;}
+	public void setClothingInUse(ClothingInUse clothingInUse) {this.clothingInUse = clothingInUse;}
+	public Inventory getInventory() {return inventory;}
 	public void setInventory(Inventory inventory) {
 		this.inventory = inventory;
 	}
