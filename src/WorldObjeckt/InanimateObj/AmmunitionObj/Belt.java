@@ -3,7 +3,7 @@ import Constant.TypeOfClothing;
 import WorldObjeckt.InanimateObj.*;
 import static Constant.TypeOfClothing.BELT;
 
-public class Belt extends AmmunitionClothing {
+public abstract class Belt extends AmmunitionClothing {
     private final TypeOfClothing  typeOfClothing = BELT;
 
     @Override

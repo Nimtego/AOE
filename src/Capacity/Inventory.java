@@ -10,7 +10,9 @@ import java.util.Collections;
 public class Inventory {
     private ArrayList<Ammunition> listInventory;
 
-    public Inventory() {this.listInventory = new ArrayList<>();}
+    public Inventory() {
+        this.listInventory = new ArrayList<>();
+    }
     public Inventory(Ammunition ... listOfAmmunition) {
         this.listInventory = new ArrayList<>();
         Collections.addAll(listInventory, listOfAmmunition);

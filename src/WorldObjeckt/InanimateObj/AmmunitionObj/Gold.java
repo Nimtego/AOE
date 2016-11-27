@@ -1,5 +1,6 @@
 package WorldObjeckt.InanimateObj.AmmunitionObj;
 
+import WorldObjeckt.AnimateObj.Creature;
 import WorldObjeckt.InanimateObj.Ammunition;
 
 /**
@@ -11,6 +12,12 @@ public class Gold extends Ammunition {
     public Gold() {
         this(0);
     }
+
+    @Override
+    public void interact(Creature creature) {
+        creature.setGold(this);
+    }
+
     public Gold(long gold) {
         this("Gold", "For payment", gold);
     }

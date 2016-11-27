@@ -20,7 +20,9 @@ abstract public class Creature extends WorldObj {
 		setParameters(parameters);
 	}
 	public Gold getGold() {return gold;}
-	public void setGold(Gold gold) {this.gold = gold;}
+	public void setGold(Gold gold) {
+		this.gold.setGold(gold.getGold() + this.gold.getGold());
+	}
 	public ClothingInUse getClothingInUse() {return clothingInUse;}
 	public void setClothingInUse(ClothingInUse clothingInUse) {this.clothingInUse = clothingInUse;}
 	public Inventory getInventory() {return inventory;}
@@ -30,7 +32,5 @@ abstract public class Creature extends WorldObj {
 	public void setParameters(Parameters parameters) {
 		this.parameters = parameters;
 	}
-	public Parameters getParameters(){
-		return parameters;
-	}
+	public Parameters getParameters(){return parameters;}
 }

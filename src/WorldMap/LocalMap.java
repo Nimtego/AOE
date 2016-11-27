@@ -1,13 +1,10 @@
 package WorldMap;
 
-public class LockalMap {
-	String information;
-	Spot[][] spot = new Spot[10][10];
-	public static int num = 0;
+public class LocalMap {
+	private String information;
+	private Spot[][] spot = new Spot[10][10];
 
-	public LockalMap(String information) {
-		num++;
-	//	System.out.println("Lockal map created " +num);
+	public LocalMap(String information) {
 		setInformation(information);
 		setSpot();
 	}
@@ -24,7 +21,7 @@ public class LockalMap {
 		}	
 	}
 	public String getInformation() {
-		return information+num;
+		return information;
 	}
 	public Spot[][] getSpot() {
 		return spot;

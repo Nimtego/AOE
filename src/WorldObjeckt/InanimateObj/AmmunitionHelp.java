@@ -2,7 +2,7 @@ package WorldObjeckt.InanimateObj;
 import ParametersAll.*;
 import WorldObjeckt.*;
 
-public class AmmunitionHelp extends Ammunition {
+public abstract class AmmunitionHelp extends Ammunition {
 	Parameters parameters;
 	public AmmunitionHelp() {
 		super("Empty", "Empty");

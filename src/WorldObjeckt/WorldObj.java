@@ -21,10 +21,10 @@ abstract public class WorldObj implements Interaction {
 		coordinate = new Coordinate(Rand.getRandInt(10), Rand.getRandInt(10), Rand.getRandInt(10), Rand.getRandInt(10));
 	}
 	@Override
-	public void interact(Creature creature){};
+	abstract public void interact(Creature creature);
 	@Override
-	public void interact(Ammunition things) {
-		System.out.println(things.getName());
+	public void interact(Ammunition amunation) {
+		System.out.println(amunation.getName());
 	}
 	@Override
 	public String fullInformation(){

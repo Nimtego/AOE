@@ -1,6 +1,7 @@
 package Utilits;
 
 import AOEException.NotCorrectEnteringException;
+import sun.nio.cs.StreamDecoder;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -81,5 +82,15 @@ public class UserChoice {
             }
         }
         while(true);
+    }
+    public static String setString() {
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+        String userInput = null;
+        try {
+            userInput = read.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return userInput;
     }
 }
