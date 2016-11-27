@@ -17,9 +17,7 @@ public class BasicParameters {
 
     }
 
-    public static Builder newBuilder() {
-        return new BasicParameters().new Builder();
-    }
+    public static Builder newBuilder() {return new BasicParameters().new Builder();}
 
     public class Builder {
         private Builder(){
@@ -53,64 +51,20 @@ public class BasicParameters {
             BasicParameters.this.luck = luck;
             return this;
         }
-        public BasicParameters build() {
-            return BasicParameters.this;
-        }
+        public BasicParameters build() {return BasicParameters.this;}
     }
-
-    public int getStrength() {
-        return strength;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
-    public int getDexterity() {
-        return dexterity;
-    }
-
-    public void setDexterity(int dexterity) {
-        this.dexterity = dexterity;
-    }
-
-    public int getConstitution() {
-        return constitution;
-    }
-
-    public void setConstitution(int constitution) {
-        this.constitution = constitution;
-    }
-
-    public int getIntelligence() {
-        return intelligence;
-    }
-
-    public void setIntelligence(int intelligence) {
-        this.intelligence = intelligence;
-    }
-
-    public int getWisdom() {
-        return wisdom;
-    }
-
-    public void setWisdom(int wisdom) {
-        this.wisdom = wisdom;
-    }
-
-    public int getKnowledge() {
-        return knowledge;
-    }
-
-    public void setKnowledge(int knowledge) {
-        this.knowledge = knowledge;
-    }
-
-    public int getLuck() {
-        return luck;
-    }
-
-    public void setLuck(int luck) {
-        this.luck = luck;
-    }
+    public int getStrength() {return strength;}
+    public void setStrength(int strength) {this.strength = strength;}
+    public int getDexterity() {return dexterity;}
+    public void setDexterity(int dexterity) {this.dexterity = dexterity;}
+    public int getConstitution() {return constitution;}
+    public void setConstitution(int constitution) {this.constitution = constitution;}
+    public int getIntelligence() {return intelligence;}
+    public void setIntelligence(int intelligence) {this.intelligence = intelligence;}
+    public int getWisdom() {return wisdom;}
+    public void setWisdom(int wisdom) {this.wisdom = wisdom;}
+    public int getKnowledge() {return knowledge;}
+    public void setKnowledge(int knowledge) {this.knowledge = knowledge;}
+    public int getLuck() {return luck;}
+    public void setLuck(int luck) {this.luck = luck;}
 }

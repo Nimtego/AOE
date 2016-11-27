@@ -10,6 +10,6 @@ public class Main {
 	public static void main(String[] args) {
 		Player player = PlayerCreater.create();
 		WorldMap worldMap = new WorldMap(1,1);
-
+		BasicParameters basic = BasicParameters.newBuilder().setConstitution(10).build();
 	}
 }
