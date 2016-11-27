@@ -72,8 +72,8 @@ public class Parameters {
 		changeHealPoints(getMaxHealPoints());
 		setPAtack(getPAtack() + (getLvl() / 6 + getLvl() / 7));
 		setMAtack(getMAtack() + (getLvl() / 8 + getLvl() / 10) / 2);
-		setPDef(getPDef() + (getLvl() % 3 == 0 ? 2 : 0 + (getLvl() / 4)));
-		setMDef(getMDef() + (getLvl()  % 5 == 0 ? 1 : 0 + (getLvl() / 9)));
+		setPDef(getPDef() + (getLvl() % 3 == 0 ? 2 : (getLvl() / 4)));
+		setMDef(getMDef() + (getLvl()  % 5 == 0 ? 1 : (getLvl() / 9)));
 		setBlock(getBlock() + (getLvl() % 25 == 0 ? 1 : 0));
 		setParry(getParry() + (getLvl() % 15 == 0 ? 1 : 0));
 	}

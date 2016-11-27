@@ -1,5 +1,4 @@
 package WorldMap;
-import WorldObjeckt.*;
 
 public class WorldMap {
 	private String information;
