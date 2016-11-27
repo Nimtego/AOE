@@ -16,9 +16,16 @@ public class Parameters {
 	private int powerOfCrit = 0;
 	private int speedAtack = 0;
 
-	public Parameters() {}
-
-	public Parameters(int healPoints, int pAtack, int lvl) {
+	public Parameters() {
+		this.basicParameters = BasicParameters.newBuilder().strength(5).
+                                constitution(5).dexterity(5).intelligence(5).
+                                    knowlege(5).wisdom(5).luck(5).build();
+        this.lvl = 0;
+        this.exp = 0;
+        this.maxHealPoints = basicParameters.getConstitution()*10;
+        this.healPoints = maxHealPoints;
+	}
+	public Parameters(final int healPoints, final int pAtack, final int lvl) {
 		setHealPoints(healPoints);
 		setPAtack(pAtack);
 		setLvl(lvl);

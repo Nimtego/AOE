@@ -23,31 +23,31 @@ public class BasicParameters {
         private Builder(){
 
         }
-        public Builder setStrength(final int strength) {
+        public Builder strength(final int strength) {
             BasicParameters.this.strength = strength;
             return this;
         }
-        public Builder setDexterity(final int dexterity) {
+        public Builder dexterity(final int dexterity) {
             BasicParameters.this.dexterity = dexterity;
             return this;
         }
-        public Builder setConstitution(final int constitution) {
+        public Builder constitution(final int constitution) {
             BasicParameters.this.constitution = constitution;
             return this;
         }
-        public Builder setIntelligence(final int intelligence) {
+        public Builder intelligence(final int intelligence) {
             BasicParameters.this.intelligence = intelligence;
             return this;
         }
-        public Builder setWisdom(final int wisdom) {
+        public Builder wisdom(final int wisdom) {
             BasicParameters.this.wisdom = wisdom;
             return this;
         }
-        public Builder setKnowlege(final int knowledge) {
+        public Builder knowlege(final int knowledge) {
             BasicParameters.this.knowledge = knowledge;
             return this;
         }
-        public Builder setLuck(final int luck) {
+        public Builder luck(final int luck) {
             BasicParameters.this.luck = luck;
             return this;
         }

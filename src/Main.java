@@ -10,6 +10,8 @@ public class Main {
 	public static void main(String[] args) {
 		Player player = PlayerCreater.create();
 		WorldMap worldMap = new WorldMap(1,1);
-		BasicParameters basic = BasicParameters.newBuilder().setConstitution(10).build();
+		BasicParameters basicParameters = BasicParameters.newBuilder().strength(5).
+				constitution(5).dexterity(5).intelligence(5).
+				knowlege(5).wisdom(5).luck(5).build();
 	}
 }
