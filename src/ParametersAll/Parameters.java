@@ -1,7 +1,7 @@
 package ParametersAll;
 
 public class Parameters {
-
+	private BasicParameters basicParameters;
 	private int lvl = 0;
 	private int exp = 0;
 	private int maxHealPoints = 0;
@@ -15,14 +15,18 @@ public class Parameters {
 	private int critChance = 0;
 	private int powerOfCrit = 0;
 	private int speedAtack = 0;
+
 	public Parameters() {}
+
 	public Parameters(int healPoints, int pAtack, int lvl) {
 		setHealPoints(healPoints);
 		setPAtack(pAtack);
 		setLvl(lvl);
 	}
-//name, healPoints, pAtack, mAtack, pDef, mDef, block, parry, 
-//	critChens, powerOfCrit, speedAtack
+	public Parameters(final int strength, final int dexterity, final int constitution,
+			          final int intelligence, final int wisdom, final int knowledge,
+					  final int luck) {
+	}
 	public Parameters(int healPoints, int pAtack, int lvl, int exp) {
 		this(healPoints, pAtack, (lvl / 10 * 2), (lvl / 15  * 2 ), (lvl / 20 * 2), 0, 0, (lvl / 10 + 1), ( lvl / 10 + 120), 1);
 		this.lvl = lvl;
