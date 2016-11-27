@@ -3,36 +3,40 @@ import WorldObjeckt.*;
 
 public class WorldMap {
 	private String information;
-	private LocalMap[][] localMap = new LocalMap[10][10];
+	private LocalMap[][] localMap;
+	private final int X;
+	private final int Y;
 	
-	public WorldMap() {
+	public WorldMap(final int x, final int y) {
 		setInformation("World map");
+		localMap = new LocalMap[x][y];
+		this.X = x;
+		this.Y = y;
 		setLocalMap();
-		System.out.println("World map created");
 	}
 	
 	public void setInformation(String information) {
 		this.information = information;
 	}
-	
 	public void setLocalMap() {
 		for (int i = 0; i< localMap.length; i++) {
-			for (int j = 0; j< localMap.length; j++) {
+			for (int j = 0; j< localMap[i].length; j++) {
 				localMap[i][j] = new LocalMap("Local map");
 			}
 		}	
 	}
-	
-	public void landingInLockalMap(WorldObj anyWorldObj) {
-		int lockalMapX = anyWorldObj.getCoordinate().getLockalMapX();
-		int lockalMapY = anyWorldObj.getCoordinate().getLockalMapY();
-		int spotX = anyWorldObj.getCoordinate().getSpotX();
-		int spotY = anyWorldObj.getCoordinate().getSpotY();
-		localMap[lockalMapX][lockalMapY].getSpot(spotX, spotY).getWorldObj().add(anyWorldObj);
+	public LocalMap[][] getLocalMap() {
+		return localMap;
 	}
-	
-	
-	
+	public void setLocalMap(LocalMap[][] localMap) {
+		this.localMap = localMap;
+	}
+	public int getX() {
+		return X;
+	}
+	public int getY() {
+		return Y;
+	}
 	public String getNameLockal(int x, int y) {
 		return localMap[x][y].getInformation();
 	}
@@ -42,7 +46,6 @@ public class WorldMap {
 	public void setLockalMap(LocalMap lockal, int x, int y) {
 		localMap[x][y] = lockal;
 	}
-
 	public String getInformation() {
 		return information;
 	}

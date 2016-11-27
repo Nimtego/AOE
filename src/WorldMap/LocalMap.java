@@ -13,10 +13,10 @@ public class LocalMap {
 		this.information = information;
 	}
 
-	public void setSpot() {
+	private void setSpot() {
 		for (int  i=0; i<spot.length; i++) {
-			for (int j=0; j<spot.length; j++) {
-				spot[i][j] = new Spot("Lockal map");
+			for (int j=0; j<spot[i].length; j++) {
+				spot[i][j] = new Spot("Local map");
 			}
 		}	
 	}
