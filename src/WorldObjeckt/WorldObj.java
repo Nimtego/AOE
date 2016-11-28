@@ -4,8 +4,9 @@ import WorldObjeckt.AnimateObj.*;
 import WorldObjeckt.InanimateObj.*;
 import WorldMap.*;
 import Utilits.Rand;
+import java.awt.Point;
 
-abstract public class WorldObj implements Interaction {
+abstract public class WorldObj {
 
 	private String name;
 	private String information;
@@ -18,29 +19,22 @@ abstract public class WorldObj implements Interaction {
 	public WorldObj(String name, String information) {
 		setName(name);
 		setInformation(information);
-		coordinate = new Coordinate(Rand.getRandInt(10), Rand.getRandInt(10), Rand.getRandInt(10), Rand.getRandInt(10));
+		coordinate = new Coordinate(new Point(Rand.getRandInt(10), Rand.getRandInt(10)),
+									new Point(Rand.getRandInt(10), Rand.getRandInt(10)));
 	}
-	@Override
-	abstract public void interact(Creature creature);
-	@Override
-	public void interact(Ammunition amunation) {
-		System.out.println(amunation.getName());
+	public void moveCoordinate() {
+
 	}
-	@Override
-	public String fullInformation(){
-		return name + " " + information;
-	}
-	@Override
 	public String toString() {
 		return "\nИмя: " +name +"\nИнформация: " +information +"\n" +getCoordinate();
 	}
-	
-	
+
 	final public void setName(String name) {this.name = name;}
 	final public void setInformation(String information) {this.information = information; }
 	final public void setCoordinate() {this.coordinate = new Coordinate();}
-	final public void setCoordinate(int lockalMapX, int lockalMapY, int spotX, int spotY) {
-		this.coordinate = new Coordinate(lockalMapX, lockalMapY, spotX, spotY);}
+	final public void setCoordinate(final Coordinate coordinate) {
+		this.coordinate = coordinate;
+	}
 	public String getName() {return name;}
 	public String getInformation() {return information;}
 	public Coordinate getCoordinate() {return coordinate;}

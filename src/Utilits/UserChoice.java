@@ -23,11 +23,11 @@ public class UserChoice {
             }
             try {
                 if (!(question.equals("y") || question.equals("Y") || question.equals("N") || question.equals("n"))) {
-                    throw new NotCorrectEnteringException();
+                    throw new NotCorrectEnteringException("Введите y или n");
                 }
                 return question.equals("Y") || question.equals("y");
-            } catch (Exception e) {
-                System.out.println("Введите y или n");
+            } catch (NotCorrectEnteringException e) {
+                System.out.println(e);
             }
         }
         while (true);

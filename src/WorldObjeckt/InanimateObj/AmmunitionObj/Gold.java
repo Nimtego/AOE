@@ -13,10 +13,6 @@ public class Gold extends Ammunition {
         this(0);
     }
 
-    @Override
-    public void interact(Creature creature) {
-        creature.setGold(this);
-    }
 
     public Gold(long gold) {
         this("Gold", "For payment", gold);

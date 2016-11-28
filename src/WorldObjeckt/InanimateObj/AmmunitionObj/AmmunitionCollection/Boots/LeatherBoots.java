@@ -19,9 +19,6 @@ public class LeatherBoots extends Feet {
 	public String getName() {
 		return name;
 	}
-	@Override
-	public void interact(Creature creature) {
 
-	}
 }
 
