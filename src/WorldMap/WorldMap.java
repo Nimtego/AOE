@@ -4,16 +4,23 @@ import AOEException.NotCorrectEnteringException;
 import java.awt.Point;
 
 public class WorldMap {
+	private static WorldMap instance;
 	private String information;
 	private LocalMap[][] localMap;
 	private final Point maxLocalPoint;
 	
-	public WorldMap(final int maxLocalMapX, final int maxLocalMapY) {
+	private WorldMap(final int maxLocalMapX, final int maxLocalMapY) {
 		this.information = "World map";
 		maxLocalPoint = new Point(maxLocalMapX, maxLocalMapY);
 		localMap = new LocalMap[maxLocalMapX][maxLocalMapY];
 		setLocalMap();
 	}
+	public static WorldMap getInstance() {
+        if (instance == null) {
+            instance = new WorldMap(10, 10);
+        }
+        return instance;
+    }
 
 	public void setLocalMap() {
 		for (int i = 0; i< maxLocalPoint.x; i++) {

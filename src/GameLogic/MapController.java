@@ -19,7 +19,11 @@ public class MapController {
     public static Spot getSpotForSeting(final LocalMap localMap, final Point pointOfSpot) throws NotCorrectEnteringException {
         return localMap.getSpotByCoordinat(pointOfSpot);
     }
-    public  static void setWorldObjInSpot(final WorldObj worldObj, Spot spot) {
+    public  static void setWorldObjInSpot(final WorldObj worldObj) throws NotCorrectEnteringException {
+        WorldMap worldMap = WorldMap.getInstance();
+        Point pointLocalMap = worldObj.getCoordinate().getPointOfLocalMap();
+        Point pointOfSpot = worldObj.getCoordinate().getPointOfSpot();
+        Spot spot = worldMap.getLocalMapByCoordinat(pointLocalMap).getSpotByCoordinat(pointOfSpot);
         spot.setSpotObj(worldObj);
     }
 }
