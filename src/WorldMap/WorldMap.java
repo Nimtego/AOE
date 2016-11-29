@@ -1,5 +1,6 @@
 package WorldMap;
 import AOEException.NotCorrectEnteringException;
+import Constant.AllConstant;
 
 import java.awt.Point;
 
@@ -17,7 +18,7 @@ public class WorldMap {
 	}
 	public static WorldMap getInstance() {
         if (instance == null) {
-            instance = new WorldMap(10, 10);
+            instance = new WorldMap(AllConstant.LOCAL_MAP_SIZE, AllConstant.LOCAL_MAP_SIZE);
         }
         return instance;
     }
