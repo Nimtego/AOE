@@ -1,9 +1,8 @@
 package WorldObjeckt;
-import Interfaces.Interaction;
-import WorldObjeckt.AnimateObj.*;
-import WorldObjeckt.InanimateObj.*;
+import Constant.AllConstant;
 import WorldMap.*;
 import Utilits.Rand;
+
 import java.awt.Point;
 
 abstract public class WorldObj {
@@ -11,19 +10,22 @@ abstract public class WorldObj {
 	private String name;
 	private String information;
 	private Coordinate coordinate;
-	
-	public WorldObj() {
-		System.out.println("World obj created");
-		coordinate = new Coordinate();
-	}
-	public WorldObj(String name, String information) {
+
+	public WorldObj(final String name, final String information) {
+        this(name, information, new Coordinate(new Point(Rand.getRandInt(AllConstant.LOCAL_MAP_SIZE),
+                                                         Rand.getRandInt(AllConstant.LOCAL_MAP_SIZE)),
+                                               new Point(Rand.getRandInt(AllConstant.SPOT_SIZE),
+                                                         Rand.getRandInt(AllConstant.SPOT_SIZE))));
 		setName(name);
 		setInformation(information);
-		coordinate = new Coordinate(new Point(Rand.getRandInt(10), Rand.getRandInt(10)),
-									new Point(Rand.getRandInt(10), Rand.getRandInt(10)));
 	}
-	public void moveCoordinate() {
-
+    public WorldObj(final String name, final String information, final Coordinate coordinate) {
+        setName(name);
+        setInformation(information);
+        this.coordinate = coordinate;
+    }
+	public void moveCoordinate(final Coordinate coordinate) {
+        this.coordinate = coordinate;
 	}
 	public String toString() {
 		return "\nИмя: " +name +"\nИнформация: " +information +"\n" +getCoordinate();

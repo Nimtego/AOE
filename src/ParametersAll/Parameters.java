@@ -30,10 +30,6 @@ public class Parameters {
 		setPAtack(pAtack);
 		setLvl(lvl);
 	}
-	public Parameters(final int strength, final int dexterity, final int constitution,
-			          final int intelligence, final int wisdom, final int knowledge,
-					  final int luck) {
-	}
 	public Parameters(int healPoints, int pAtack, int lvl, int exp) {
 		this(healPoints, pAtack, (lvl / 10 * 2), (lvl / 15  * 2 ), (lvl / 20 * 2), 0, 0, (lvl / 10 + 1), ( lvl / 10 + 120), 1);
 		this.lvl = lvl;
