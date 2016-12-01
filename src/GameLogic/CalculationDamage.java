@@ -6,9 +6,10 @@ public class CalculationDamage {
 	public static int givesDamage(Creature first, Creature second) {
 		int chanceOfCrit = first.getParameters().getCritChens();
 		int powerOfCrit = first.getParameters().getPowerOfCrit();
-		int damage = first.getParameters().getPAtack() * chanceOfCrit(chanceOfCrit, powerOfCrit);
+//		int damage = first.getParameters().getPAtack() * chanceOfCrit(chanceOfCrit, powerOfCrit);
 		int pdef = second.getParameters().getPDef();
-		return damage - (Rand.getRandInt(pdef / 4, pdef) / 10);
+//		return damage - (Rand.getRandInt(pdef / 4, pdef) / 10);
+		return 0;
 	}
 
 	private static int chanceOfCrit(int critChance, int powerOfCrit) {

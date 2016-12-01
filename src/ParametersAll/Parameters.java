@@ -2,19 +2,21 @@ package ParametersAll;
 
 public class Parameters {
 	private BasicParameters basicParameters;
-	private int lvl = 0;
-	private int exp = 0;
-	private int maxHealPoints = 0;
-	private int healPoints = 0;
-	private int pAtack = 0;
-	private int mAtack = 0;
-	private int pDef = 0;
-	private int mDef = 0;
-	private int block = 0;
-	private int parry = 0;
-	private int critChance = 0;
-	private int powerOfCrit = 0;
-	private int speedAtack = 0;
+	private int lvl;
+	private int exp;
+	private int maxHealPoints;
+	private int healPoints;
+    private int maxPAtack;
+	private int minPAtack;
+	private int maxMAtack;
+    private int minMAtack;
+	private int pDef;
+	private int mDef;
+	private int block;
+	private int parry;
+	private int critChance;
+	private int powerOfCrit;
+	private int speedAtack;
 
 	public Parameters() {
 		this.basicParameters = BasicParameters.newBuilder().strength(5).
@@ -22,12 +24,15 @@ public class Parameters {
                                     knowlege(5).wisdom(5).luck(5).build();
         this.lvl = 0;
         this.exp = 0;
-        this.maxHealPoints = basicParameters.getConstitution()*10;
-        this.healPoints = maxHealPoints;
+        calculateParametersFromBasic();
+	}
+	public Parameters(BasicParameters basicParameters) {
+		this.basicParameters = basicParameters;
+		calculateParametersFromBasic();
 	}
 	public Parameters(final int healPoints, final int pAtack, final int lvl) {
 		setHealPoints(healPoints);
-		setPAtack(pAtack);
+//		setPAtack(pAtack);
 		setLvl(lvl);
 	}
 	public Parameters(int healPoints, int pAtack, int lvl, int exp) {
@@ -38,8 +43,8 @@ public class Parameters {
 
 	public Parameters(int healPoints, int pAtack, int mAtack, int pDef, int mDef, int block, int parry, int critChens, int powerOfCrit, int speedAtack) {
 		this.maxHealPoints = this.healPoints = healPoints;
-		this.pAtack = pAtack;
-		this.mAtack = mAtack;
+//		this.pAtack = pAtack;
+//		this.mAtack = mAtack;
 		this.pDef = pDef;
 		this.mDef = mDef;
 		this.block = block;
@@ -48,6 +53,15 @@ public class Parameters {
 		this.powerOfCrit = powerOfCrit;
 		this.speedAtack = speedAtack;
 	}
+	private void calculateParametersFromBasic() {
+        this.maxHealPoints = 10 + basicParameters.getConstitution()*10 +
+                            (basicParameters.getConstitution() % 10 == 0 ? 10 : 0) + lvl * 5;
+        this.healPoints = maxHealPoints;
+        this.maxPAtack = basicParameters.getStrength() / 2;
+		this.minPAtack = maxPAtack / 2 + maxPAtack / 2;
+		this.maxMAtack = basicParameters.getIntelligence() / 3;
+		this.minMAtack = maxMAtack / 3 + maxMAtack / 3;
+    }
 	public void changeHealPoints(int heal) {setHealPoints(getHealPoints() + heal);}
 	public void changeHealPoints1(int heal) {    // хилл и + нанесение дамага
 		healPoints += getHealPoints() + heal > getMaxHealPoints() ? (maxHealPoints - healPoints) : heal;
@@ -65,7 +79,7 @@ public class Parameters {
 			exp -= expToNextLvl();
 			lvl++;
 			System.out.println("\n***** Lvl UP *****\n" +"***** " +getLvl() +" LVL *****");
-			lvlUp();
+//			lvlUp();
 			calculateLvlUp();
 		}
 	}
@@ -74,7 +88,7 @@ public class Parameters {
 		return lvl * lvl * lvl + (lvl * 10) * (8 * lvl) + 5;
 	}
 
-	private void lvlUp() {
+/**	private void lvlUp() {
 		setMaxHealPoints(getMaxHealPoints() + ((getLvl() * 2) + 9 / 2));
 		changeHealPoints(getMaxHealPoints());
 		setPAtack(getPAtack() + (getLvl() / 6 + getLvl() / 7));
@@ -83,14 +97,12 @@ public class Parameters {
 		setMDef(getMDef() + (getLvl()  % 5 == 0 ? 1 : (getLvl() / 9)));
 		setBlock(getBlock() + (getLvl() % 25 == 0 ? 1 : 0));
 		setParry(getParry() + (getLvl() % 15 == 0 ? 1 : 0));
-	}
+	}*/
 
 	public void setLvl(int lvl) {this.lvl = lvl;}
 	public void setExp(final int exp) {this.exp = exp;}
 	public void setHealPoints(int healPoints) {this.healPoints =  healPoints;}
 	public void setMaxHealPoints(int maxHealPoints) {this.maxHealPoints = maxHealPoints;}
-	public void setPAtack(int pAtack) {this.pAtack = pAtack;}
-	public void setMAtack(int mAtack) {this.mAtack = mAtack;}
 	public void setPDef(int pDef) {this.pDef = pDef;}
 	public void setMDef(int mDef) {this.mDef = mDef;}
 	public void setBlock(int block) {this.block = block;}
@@ -102,8 +114,6 @@ public class Parameters {
 	public int getExp() {return exp;}
 	public int getHealPoints() {return healPoints;}
 	public int getMaxHealPoints() {return maxHealPoints;}
-	public int getPAtack() {return pAtack;}
-	public int getMAtack() {return mAtack;}
 	public int getPDef() {return pDef;}
 	public int getMDef() {return mDef;}
 	public int getBlock() {return block;}

@@ -1,6 +1,5 @@
 package WorldObjeckt.AnimateObj;
 import ParametersAll.*;
-import GameLogic.*;
 
 
 public class Player extends Creature {
