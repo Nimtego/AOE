@@ -1,7 +1,5 @@
 package WorldMap;
-
 import AOEException.NotCorrectEnteringException;
-
 import java.awt.*;
 
 public class LocalMap {
@@ -10,12 +8,12 @@ public class LocalMap {
 	private final Point maxSpotPoint;
 
 	public LocalMap(final String information) {
-		this(information, 10, 10);
+		this(information, new Point(10,10));
 	}
-	public LocalMap(final String information, final int maxSpotSizeX, final int maxSpotSizeY) {
+	public LocalMap(final String information, final Point amount) {
 		this.information = information;
-		spot = new Spot[maxSpotSizeX][maxSpotSizeY];
-		maxSpotPoint = new Point(maxSpotSizeX, maxSpotSizeY);
+		spot = new Spot[amount.x][amount.y];
+		maxSpotPoint = amount;
 		setSpot();
 	}
 	private void setSpot() {

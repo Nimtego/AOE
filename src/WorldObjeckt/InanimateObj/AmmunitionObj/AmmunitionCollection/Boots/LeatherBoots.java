@@ -15,9 +15,7 @@ public class LeatherBoots extends Feet {
 			
 	}
 	@Override
-	public String getName() {
-		return name;
-	}
+	public String getName() {return name;}
 
 }
 

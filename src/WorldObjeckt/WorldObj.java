@@ -1,5 +1,6 @@
 package WorldObjeckt;
 import Constant.AllConstant;
+import Interfaces.MapObservable;
 import WorldMap.*;
 import Utilits.Rand;
 
