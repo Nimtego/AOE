@@ -6,17 +6,17 @@ public class Parameters {
 	private int exp;
 	private int maxHealPoints;
 	private int healPoints;
-    private int maxPAtack;
-	private int minPAtack;
-	private int maxMAtack;
-    private int minMAtack;
+    private int maxPAttack;
+	private int minPAttack;
+	private int maxMAttack;
+    private int minMAttack;
 	private int pDef;
 	private int mDef;
 	private int block;
 	private int parry;
 	private int critChance;
 	private int powerOfCrit;
-	private int speedAtack;
+	private int speedAttack;
 
 	public Parameters() {
 		this.basicParameters = BasicParameters.newBuilder().strength(5).
@@ -30,37 +30,23 @@ public class Parameters {
 		this.basicParameters = basicParameters;
 		calculateParametersFromBasic();
 	}
-	public Parameters(final int healPoints, final int pAtack, final int lvl) {
-		setHealPoints(healPoints);
-//		setPAtack(pAtack);
-		setLvl(lvl);
-	}
-	public Parameters(int healPoints, int pAtack, int lvl, int exp) {
-		this(healPoints, pAtack, (lvl / 10 * 2), (lvl / 15  * 2 ), (lvl / 20 * 2), 0, 0, (lvl / 10 + 1), ( lvl / 10 + 120), 1);
-		this.lvl = lvl;
-		this.exp = exp;
-	}
 
-	public Parameters(int healPoints, int pAtack, int mAtack, int pDef, int mDef, int block, int parry, int critChens, int powerOfCrit, int speedAtack) {
-		this.maxHealPoints = this.healPoints = healPoints;
-//		this.pAtack = pAtack;
-//		this.mAtack = mAtack;
-		this.pDef = pDef;
-		this.mDef = mDef;
-		this.block = block;
-		this.parry = parry;
-		this.critChance = critChens;
-		this.powerOfCrit = powerOfCrit;
-		this.speedAtack = speedAtack;
-	}
 	private void calculateParametersFromBasic() {
         this.maxHealPoints = 10 + basicParameters.getConstitution()*10 +
                             (basicParameters.getConstitution() % 10 == 0 ? 10 : 0) + lvl * 5;
         this.healPoints = maxHealPoints;
-        this.maxPAtack = basicParameters.getStrength() / 2;
-		this.minPAtack = maxPAtack / 2 + maxPAtack / 2;
-		this.maxMAtack = basicParameters.getIntelligence() / 3;
-		this.minMAtack = maxMAtack / 3 + maxMAtack / 3;
+        this.maxPAttack = basicParameters.getStrength() / 2;
+		this.minPAttack = maxPAttack / 2 + maxPAttack / 2;
+		this.maxMAttack = basicParameters.getIntelligence() / 3;
+		this.minMAttack = maxMAttack / 3 + maxMAttack / 3;
+		this.critChance = (basicParameters.getDexterity() / 10) * (basicParameters.getLuck() / 5);
+		this.powerOfCrit = basicParameters.getDexterity() / 4 * (basicParameters.getLuck() / 20);
+		this.speedAttack = 1;
+		this.pDef = 1;
+		this.mDef = 1;
+		this.block = 1;
+		this.parry = 1;
+
     }
 	public void changeHealPoints(int heal) {setHealPoints(getHealPoints() + heal);}
 	public void changeHealPoints1(int heal) {    // хилл и + нанесение дамага
@@ -98,28 +84,101 @@ public class Parameters {
 		setBlock(getBlock() + (getLvl() % 25 == 0 ? 1 : 0));
 		setParry(getParry() + (getLvl() % 15 == 0 ? 1 : 0));
 	}*/
+	public BasicParameters getBasicParameters() {
+		return basicParameters;
+	}
 
-	public void setLvl(int lvl) {this.lvl = lvl;}
-	public void setExp(final int exp) {this.exp = exp;}
-	public void setHealPoints(int healPoints) {this.healPoints =  healPoints;}
-	public void setMaxHealPoints(int maxHealPoints) {this.maxHealPoints = maxHealPoints;}
-	public void setPDef(int pDef) {this.pDef = pDef;}
-	public void setMDef(int mDef) {this.mDef = mDef;}
-	public void setBlock(int block) {this.block = block;}
-	public void setParry(int parry) {this.parry = parry;}
-	public void setCritChens(int critChens) {this.critChance = critChens;}
-	public void setPowerOfCrit(int powerOfCrit) {this.powerOfCrit = powerOfCrit;}
-	public void setSpeedAtack(int speedAtack) {this.speedAtack = speedAtack;}
-	public int getLvl() {return lvl;}
-	public int getExp() {return exp;}
-	public int getHealPoints() {return healPoints;}
-	public int getMaxHealPoints() {return maxHealPoints;}
-	public int getPDef() {return pDef;}
-	public int getMDef() {return mDef;}
-	public int getBlock() {return block;}
-	public int getParry() {return parry;}
-	public int getCritChens() {return critChance;}
-	public int getPowerOfCrit() {return powerOfCrit;}
-	public int getSpeedAtack() {return speedAtack;}
-
+	public void setBasicParameters(BasicParameters basicParameters) {
+		this.basicParameters = basicParameters;
+	}
+	public int getLvl() {
+		return lvl;
+	}
+	public void setLvl(int lvl) {
+		this.lvl = lvl;
+	}
+	public int getExp() {
+		return exp;
+	}
+	public void setExp(int exp) {
+		this.exp = exp;
+	}
+	public int getMaxHealPoints() {
+		return maxHealPoints;
+	}
+	public void setMaxHealPoints(int maxHealPoints) {
+		this.maxHealPoints = maxHealPoints;
+	}
+	public int getHealPoints() {
+		return healPoints;
+	}
+	public void setHealPoints(int healPoints) {
+		this.healPoints = healPoints;
+	}
+	public int getMaxPAttack() {
+		return maxPAttack;
+	}
+	public void setMaxPAttack(int maxPAttack) {
+		this.maxPAttack = maxPAttack;
+	}
+	public int getMinPAttack() {
+		return minPAttack;
+	}
+	public void setMinPAttack(int minPAttack) {
+		this.minPAttack = minPAttack;
+	}
+	public int getMaxMAttack() {
+		return maxMAttack;
+	}
+	public void setMaxMAttack(int maxMAttack) {
+		this.maxMAttack = maxMAttack;
+	}
+	public int getMinMAttack() {
+		return minMAttack;
+	}
+	public void setMinMAttack(int minMAttack) {
+		this.minMAttack = minMAttack;
+	}
+	public int getpDef() {
+		return pDef;
+	}
+	public void setpDef(int pDef) {
+		this.pDef = pDef;
+	}
+	public int getmDef() {
+		return mDef;
+	}
+	public void setmDef(int mDef) {
+		this.mDef = mDef;
+	}
+	public int getBlock() {
+		return block;
+	}
+	public void setBlock(int block) {
+		this.block = block;
+	}
+	public int getParry() {
+		return parry;
+	}
+	public void setParry(int parry) {
+		this.parry = parry;
+	}
+	public int getCritChance() {
+		return critChance;
+	}
+	public void setCritChance(int critChance) {
+		this.critChance = critChance;
+	}
+	public int getPowerOfCrit() {
+		return powerOfCrit;
+	}
+	public void setPowerOfCrit(int powerOfCrit) {
+		this.powerOfCrit = powerOfCrit;
+	}
+	public int getSpeedAttack() {
+		return speedAttack;
+	}
+	public void setSpeedAttack(int speedAttack) {
+		this.speedAttack = speedAttack;
+	}
 }

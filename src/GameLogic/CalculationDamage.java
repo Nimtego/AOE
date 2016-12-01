@@ -4,10 +4,10 @@ import Utilits.Rand;
 
 public class CalculationDamage {
 	public static int givesDamage(Creature first, Creature second) {
-		int chanceOfCrit = first.getParameters().getCritChens();
+		int chanceOfCrit = first.getParameters().getCritChance();
 		int powerOfCrit = first.getParameters().getPowerOfCrit();
 //		int damage = first.getParameters().getPAtack() * chanceOfCrit(chanceOfCrit, powerOfCrit);
-		int pdef = second.getParameters().getPDef();
+		int pdef = second.getParameters().getpDef();
 //		return damage - (Rand.getRandInt(pdef / 4, pdef) / 10);
 		return 0;
 	}

@@ -4,10 +4,8 @@ import WorldObjeckt.InanimateObj.*;
 
 abstract public class Feet extends AmmunitionClothing {
 	private final TypeOfClothing typeOfClothing = TypeOfClothing.FEET;
-	public Feet(String name, String iformation, int healPoints, int pAtack, int mAtack, int pDef, int mDef, int block, int parry,
-				 int critChens, int powerOfCrit, int speedAtack) {
-		super(name, iformation + " boots", healPoints, pAtack, mAtack, pDef, mDef, block, parry,
-				critChens, powerOfCrit, speedAtack);
+	public Feet() {
+
 	}
 	@Override
 	public TypeOfClothing getTypeOfClothing() {return typeOfClothing;}

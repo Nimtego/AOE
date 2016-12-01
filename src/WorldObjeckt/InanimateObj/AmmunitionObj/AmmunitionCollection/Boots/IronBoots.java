@@ -9,9 +9,7 @@ import WorldObjeckt.InanimateObj.AmmunitionObj.Feet;
 public class IronBoots extends Feet {
     private final String name;
     public IronBoots() {
-
-        super("Iron Boots", "Heavy", Rand.getRandInt(10),
-                Rand.getRandInt(8), 2, 0, 1, 5, 0, 0, 1, 0);
+        super();
         this.name = "Iron Boots";
         //"Ring", "Less Ring", rand.nextInt(10)+1, rand.nextInt(5)+1, 2, 0, 1, 2, 0, 0, 1, 0);
         // String type, String name, int healPoints, int pAtack,

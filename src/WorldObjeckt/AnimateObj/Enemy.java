@@ -5,8 +5,8 @@ import GameLogic.*;
 
 public class Enemy extends Creature {
 
-	public Enemy(String name, int healPoints, int pAtack, int lvl) {   //  пока так пока нет x y place и не факт что нужны будут
-		super(name, "Enemy", new Parameters(healPoints, pAtack, lvl, healPoints / 2));
+	public Enemy(final String name, final Parameters parameters) {   //  пока так пока нет x y place и не факт что нужны будут
+		super(name, "Enemy", parameters);
 	}
 	@Override
 	public String getName(){

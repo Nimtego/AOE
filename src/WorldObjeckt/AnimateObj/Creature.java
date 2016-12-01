@@ -12,12 +12,20 @@ abstract public class Creature extends WorldObj {
 	private Inventory inventory;
 	private ClothingInUse clothingInUse;
 
-	public Creature(String name, String information, Parameters parameters) {
+	public Creature(final String name, final String information, final Parameters parameters) {
 		super(name,information);
-		inventory = new Inventory();
-		clothingInUse = new ClothingInUse();
-		gold = new Gold();
-		setParameters(parameters);
+		this.inventory = new Inventory();
+		this.clothingInUse = new ClothingInUse();
+		this.gold = new Gold();
+		this.parameters = parameters;
+	}
+	public Creature(final Creature creature) {
+		super(creature.getName(), creature.getInformation());
+		this.inventory = creature.getInventory();
+		this.clothingInUse = creature.getClothingInUse();
+		this.gold = creature.getGold();
+		this.parameters = creature.getParameters();
+
 	}
 	public Gold getGold() {return gold;}
 	public void setGold(Gold gold) {
