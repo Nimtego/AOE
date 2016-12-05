@@ -1,11 +1,14 @@
 
 import AOEException.NotCorrectEnteringException;
 import ParametersAll.BasicParameters;
+import WorldObjeckt.AnimateObj.Creature;
 import WorldObjeckt.AnimateObj.Player;
 import GameLogic.*;
 import WorldMap.*;
 import WorldObjeckt.AnimateObj.EnemyCollection.*;
 import WorldObjeckt.InanimateObj.AmmunitionObj.AmmunitionCollection.Boots.*;
+import WorldObjeckt.InanimateObj.AmmunitionObj.Gold;
+import WorldObjeckt.WorldObj;
 
 public class Main {
 	public static void main(String[] args) throws NotCorrectEnteringException {

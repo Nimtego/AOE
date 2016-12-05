@@ -29,7 +29,7 @@ abstract public class Creature extends WorldObj {
 	}
 	public Gold getGold() {return gold;}
 	public void setGold(Gold gold) {
-		this.gold.setGold(gold.getGold() + this.gold.getGold());
+		this.gold = new Gold(gold);
 	}
 	public ClothingInUse getClothingInUse() {return clothingInUse;}
 	public void setClothingInUse(ClothingInUse clothingInUse) {this.clothingInUse = clothingInUse;}
