@@ -3,6 +3,8 @@ package TetsPack;
 import AOEException.GoldNegativeException;
 import WorldObjeckt.InanimateObj.AmmunitionObj.Gold;
 
+import javax.sound.midi.Soundbank;
+
 /**
  * Created by nimtego_loc on 06.12.2016.
  */
@@ -23,5 +25,8 @@ public class TestClassGold {
         System.out.println(gold + " " + gold2 + " " + gold3);
         gold.setNumberOfGold(10000);
         System.out.println(gold + " " + gold2 + " " + gold3);
+        Gold testMergeGold = new Gold();
+        Gold testM = testMergeGold.mergeGold(gold, gold2);
+        System.out.println(testMergeGold +"   " +testM);
     }
 }
